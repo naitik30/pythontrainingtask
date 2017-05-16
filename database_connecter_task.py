@@ -8,26 +8,26 @@ cursor = db.cursor()
 with open('FL_insurance_sample (1).csv', 'rb') as csv_file:
 	csv_data = csv.reader(csv_file)
 	csv_header = next(csv_data)
-	# sql = """CREATE TABLE FL_Insurance (
- #         policyID INT(20) NOT NULL,
- #         county CHAR(30),  
- #         eq_site_limit INT(20),
- #         hu_site_limit INT(20),
- #         fl_site_limit INT(20),
- #         fr_site_limit INT(20),
- #         tiv_2011 INT(20),
- #         tiv_2012 INT(20),
- #         eq_site_deductible INT(20),
-	# 	 hu_site_deductible INT(20),
-	# 	 fl_site_deductible INT(20),
-	# 	 fr_site_deductible,  INT(20),
-	# 	 point_latitude FLOAT,
-	# 	 point_longitude FLOAT,
-	# 	 line CHAR(20),
-	# 	 construction CHAR(20),
-	# 	 point_granularity INT(20)
-	# 	)"""
-	# cursor.execute(sql)
+	sql = """CREATE TABLE FL_Insurance (
+         policyID INT(20) NOT NULL,
+         county CHAR(30),  
+         eq_site_limit INT(20),
+         hu_site_limit INT(20),
+         fl_site_limit INT(20),
+         fr_site_limit INT(20),
+         tiv_2011 INT(20),
+         tiv_2012 INT(20),
+         eq_site_deductible INT(20),
+		 hu_site_deductible INT(20),
+		 fl_site_deductible INT(20),
+		 fr_site_deductible,  INT(20),
+		 point_latitude FLOAT,
+		 point_longitude FLOAT,
+		 line CHAR(20),
+		 construction CHAR(20),
+		 point_granularity INT(20)
+		)"""
+	cursor.execute(sql)
 
 	for data in csv_data:
 		sql = "INSERT INTO FL_Insurance(policyID,\
